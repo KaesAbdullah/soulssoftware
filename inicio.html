@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--*********************************************************************************************************************-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--HOJA DE ESTILOS DE BOOSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--JAVASCRIPT DE BOOSTRAP-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <!--ICONOS DE BOOSTRAP-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!--TITULO DE LA PAGINA-->
+    <title> SoulsSoftware</title>
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="./Imagenes/favicon.ico" type="image/x-icon">
+    <!---------------------------------------------------------------------------------->
+    <!--HOJA DE SCRIPT-->
+    <script>
+        /*PARA QUE EL BUSCADOR FUNCIONE*/
+        function openPage() {
+            var x = document.getElementById("search").value;
+
+            if (x === "inicio") {
+                window.location.replace("./inicio.html");
+            }
+
+            if (x === "SS") {
+                window.location.replace("./inicio.html");
+            }
+
+            if (x === "SoulsSoftware") {
+                window.location.replace("./inicio.html");
+            }
+
+            if (x === "Soulssoftware") {
+                window.location.replace("./inicio.html");
+            }
+
+            if (x === "bosses") {
+                window.location.replace("./bosses.html");
+            }
+
+        }
+
+        /*HACER QUE LA IMAGEN TE MANDE AL INICIO*/
+        function imagen() {
+            var x = document.getElementById("SS").value;
+
+            window.location.replace("./inicio.html");
+        }
+
+        /*HACER QUE EL BOTON TE MANDE AL LOGIN*/
+        function login() {
+            var x = document.getElementById("login").value;
+
+            window.location.replace("./login.html");
+        }
+
+        /*HACER QUE EL BOTON TE MANDE AL REGISTRO*/
+        function registrarse() {
+            var x = document.getElementById("registrarse").value;
+
+            window.location.replace("./registro.html");
+        }
+
+        /*HACER QUE EL BOTON TE MANDE A LA PAGINA DE BOSSES*/
+
+        function bosses() {
+            var x = document.getElementById("boss").value;
+
+            window.location.replace("./bosses.html");
+        }
+    </script>
+    <!---------------------------------------------------------------------------------->
+    <!--HOJA DE ESTILOS PROPIA-->
+
+    <style>
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*GENERAL*/
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'ringm';
+            src: url(./Fuentes/Fuentes/RINGM___.TTF);
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*BACKGROUND IMAGE*/
+        body {
+            background-image: url(./Imagenes/background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: fixed;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*LOADER*/
+        .loader {
+            z-index: 99999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: black;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: vanish 1s 1s forwards;
+        }
+
+
+        @keyframes vanish {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+                display: none;
+            }
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*NAVBAR*/
+        #SS {
+            cursor: pointer;
+        }
+
+        #NAV {
+            border-bottom: 3px solid gold;
+            z-index: 2;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*BREADCRUMB*/
+        #breadcrumb {
+            background-image: url(./Imagenes/breadcrumb.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-bottom: 1px solid white;
+            height: 6vh;
+            z-index: 1;
+        }
+
+        #linksBB a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #linksBB a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*BACKTEXT*/
+
+        .backText h3 {
+            font-family: 'ringm', sans-serif;
+            color: red;
+        }
+
+        .backText h3:before {
+            content: url(./Imagenes/favicon.ico);
+            transform: scale(.3);
+        }
+
+        .backText h3:after {
+            content: url(./Imagenes/favicon.ico);
+            transform: scale(.3);
+        }
+
+        .backText h6 {
+            color: white;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*CONTENIDO*/
+
+        .sobreN {
+
+            color: white;
+            background-color: rgba(0, 0, 255, 0.273);
+        }
+
+        .sobreN img {
+            width: 500px;
+            height: 300px;
+            border-left: 3px solid gold;
+        }
+
+        .sobreN h4 {
+            font-size: 1.6rem;
+            padding: 10px;
+            background-color: blue;
+            box-shadow: 7px 5px black;
+        }
+
+        .sobreN a:hover {
+            color: red;
+        }
+
+        .queH {
+
+            color: white;
+            background-color: rgba(0, 0, 255, 0.273);
+        }
+
+        .queH img {
+            width: 500px;
+            height: 300px;
+            border-right: 3px solid gold;
+        }
+
+        .queH h4 {
+            font-size: 1.6rem;
+            padding: 10px;
+            background-color: blue;
+            box-shadow: 7px 5px black;
+        }
+
+        .Inspiraciones {
+            color: white;
+            background-color: rgba(0, 0, 255, 0.273);
+        }
+
+        .Inspiraciones img {
+            width: 500px;
+            height: 300px;
+            border-left: 3px solid gold;
+        }
+
+        .Inspiraciones h4 {
+            font-size: 1.6rem;
+            padding: 10px;
+            background-color: blue;
+            box-shadow: 7px 5px black;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*BOSSES*/
+
+        .bosses {
+            color: white;
+            background-color: rgba(255, 0, 0, 0.436);
+        }
+
+        .Mnc {
+            color: white;
+            font-weight: bolder;
+            border-bottom: 3px solid red;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*CREACIONES*/
+
+        .card>img {
+            height: 290px;
+            width: 286px;
+        }
+
+        #creaciones {
+            background-color: rgba(255, 217, 0, 0.314);
+        }
+
+        #creaciones2 {
+            background-color: rgba(255, 217, 0, 0.314);
+        }
+
+        #creaciones div h3 {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 0, 0, 0.239);
+            border-radius: 20px;
+        }
+
+        #creaciones div h3:before {
+            content: url(./Imagenes/decoration.png);
+        }
+
+        #creaciones div h3:after {
+            content: url(./Imagenes/decoration.png);
+        }
+
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*FORMULARIO*/
+
+        .formulario {
+            color: white;
+        }
+
+        .opinion>h4 {
+            color: white;
+            padding-bottom: 10px;
+            border-bottom: 4px solid gold;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*FOOTER*/
+
+        .footer img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .footer img+img+img {
+            width: 200px;
+            height: 20px;
+        }
+
+        .footer>div h6 {
+            color: white;
+        }
+
+        .contactos {
+            color: white;
+        }
+    </style>
+    <!---------------------------------------------------------------------------------->
+
+</head>
+<!--*********************************************************************************************************************-->
+
+<body>
+
+    <div class="loader">
+        <img src="./Imagenes/loader.gif" alt="">
+    </div>
+
+    <!--COMIENZO CONTENEDOR-->
+    <div class="contenedor">
+
+        <!--COMIENZO NAVBAR-->
+        <div class="row">
+            <nav id="NAV" class="navbar navbar-expand-lg navbar-dark bg-black">
+                <div class="container-fluid">
+                    <img id="SS" src="./Imagenes/SOULSSOFTWARE.png" width="250px" onclick="imagen()" alt="">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" id="search"
+                                aria-label="Search" onchange="openPage()">
+                            <button class="btn btn-outline-warning" type="submit">Search</button>
+                        </form>
+                        <div class="dropdown">
+                            <button class="btn btn-danger dropdown-toggle mx-3" type="button" id="dropdownMenuButton2"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Idioma
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item active" href="#"><img style="width:30px;"
+                                            src="./Imagenes/spanish.jpg" alt=""> Español</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./eng/inicio.html"><img style="width: 30px;"
+                                            src="./Imagenes/english.png" alt=""> Inglés</a></li>
+                            </ul>
+                        </div>
+                        <button id="login" type="button" class="btn btn-outline-success mx-2 ms-1 my-sm-3"
+                            onclick="login()">Login</button>
+                        <button id="registrarse" type="button" class="btn btn-outline-danger me-2"
+                            onclick="registrarse()">Registrarse</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--FIN NAVBAR-->
+
+        <!--COMIENZO BREADCRUMB-->
+        <nav id="breadcrumb" class="navbar navbar-dark sticky-top mb-2">
+            <div class="container-fluid">
+                <nav style="--bs-breadcrumb-divider: '||';" aria-label="breadcrumb">
+                    <ol id="linksBB" class="breadcrumb d-flex justify-content-center">
+                        <li class="breadcrumb-item mb-5"><a href="./inicio.html"><i
+                                    class="bi bi-arrow-right-square-fill"></i> Inicio</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="./bosses.html">Bosses</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </nav>
+        <!--FIN BREADCRUMB-->
+
+        <!--COMIENZO DEL BACKTEXT-->
+        <div class="backText row mt-4 mb-4">
+            <div class="col-lg-11 d-flex justify-content-center ms-5">
+                <h3>Bienvenid@ a SoulsSoftware</h3>
+            </div>
+            <div class="offset-lg-4 col-lg-4 d-flex justify-content-center d-sm-none d-md-block">
+                <h6>Somos una empresa que se dedica a crear videojuegos "souls-like". Bienvenido
+                    a la gran pagina web de SS [SoulsSoftware] ¿Preparado
+                    para entrar en la niebla?, Conocerás todo sobre nosotros.</h6>
+            </div>
+            <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                <img src="./Imagenes/decoration4.png" alt="">
+            </div>
+        </div>
+        <!--FIN DEL BACKTEXT-->
+
+        <!--DECORACION AZUL-->
+        <div class="row mb-5">
+            <img src="./Imagenes/decoration3.png" alt="">
+        </div>
+        <!--FIN DECORACION AZUL-->
+
+        <!--COMIENZO DEL CONTENIDO-->
+        <!--____________________________________________________________________________-->
+
+        <!--CONTENIDO "SOBRE NOSOTROS"-->
+        <div class="sobreN row">
+            <div class="offset-lg-2 col-lg-4 mt-5 mb-5 d-sm-none d-md-block">
+                <img src="./Imagenes/Nosotros.jpg" alt="">
+            </div>
+            <div class="col-lg-4 mt-5 mb-5">
+                <h4>SOBRE NOSOTROS</h4>
+                <p class="mt-4">Nosotros somos una pequeña empresa a la que le inspiran los juegos del
+                    gran
+                    <a href="https://es.wikipedia.org/wiki/Hidetaka_Miyazaki" class="link-warning">Hidetaka
+                        Miyazaki</a>. </p>
+                <p>Esta claro que no nos comparamos a él ni a su gran empresa de videojuegos <a
+                        href="https://es.wikipedia.org/wiki/FromSoftware" class="link-warning">FromSoftware</a>. Pero
+                    nosotros solo somos
+                    un pequeño equipo que ha decidido comenzar esta aventura.</p>
+            </div>
+        </div>
+        <!--FIN CONTENIDO "SOBRE NOSOTROS"-->
+
+        <!--CONTENIDO "QUE HACEMOS"-->
+        <div class="queH row">
+            <div class="offset-lg-2 col-lg-4 mt-5 mb-5">
+                <h4>QUE HACEMOS</h4>
+                <p class="mt-4">Como hemos comentado antes, nuestra empresa se dedica a crear videojuegos tipo
+                    "Souls-like". ¡A todo
+                    nuestro equipo le encanta crear este tipo de juegos!</p>
+            </div>
+            <div class="col-lg-4 mt-5 mb-5 d-sm-none d-md-block">
+                <img src="./Imagenes/soulsborne.jpg" alt="">
+            </div>
+        </div>
+        <!--FIN CONTENIDO "QUE HACEMOS"-->
+
+        <!--CONTENIDO "INSPIRACIONES"-->
+        <div class="Inspiraciones row mb-5">
+            <div class="offset-lg-2 col-lg-4 mt-5 mb-5 d-sm-none d-md-block">
+                <img src="./Imagenes/Hacemos.jpg" alt="">
+            </div>
+            <div class="col-lg-4 mt-5 mb-5">
+                <h4>NUESTRAS INSPIRACIONES</h4>
+                <p class="mt-4">Todos nosotros tenemos algo en comun: Nos encanta la gran saga de juegos de la empresa
+                    FromSoftware.
+                    Siempre hemos querido crear juegos con su arte y estilo, ya que es algo único que nos ha hecho jugar
+                    de otra manera.</p>
+            </div>
+        </div>
+        <!--FIN CONTENIDO "INSPIRACIONES"-->
+
+        <!--____________________________________________________________________________-->
+        <!--FIN DEL CONTENIDO-->
+
+        <!--DECORACION AZUL-->
+        <div class="row mb-5">
+            <img src="./Imagenes/decoration3.png" alt="">
+        </div>
+        <!--FIN DECORACION AZUL-->
+
+        <!--BOSSES-->
+        <div class="bosses row mb-5">
+            <div class="col-8 my-4 ms-4 mx-sm-5">
+                <h4 class="Mnc">MENCIONES ESPECIALES</h4>
+                <p>Hay algo que es lo que más marca en los juegos souls. Bueno, claramente hay mejores cosas, pero...
+                </p>
+                <p>Los Bosses, (Jefes "finales"), son una de las cosas que hace que estos juegos tengan su toque. Y
+                    nosotros tenemos que dar honor a unos cuantos</p>
+            </div>
+            <div class="col-lg-3">
+                <img src="./Imagenes/sif.gif" alt="">
+            </div>
+            <div class="offset-lg-5 col-lg-5 mb-4 ms-sm-5">
+                <button id="boss" type="button" class="btn btn-outline-warning" onclick="bosses()">¡Quiero saber
+                    más!</button>
+            </div>
+        </div>
+        <!--FIN BOSSES-->
+
+        <!--DECORACION AMARILLA-->
+        <div class="row mb-5">
+            <img src="./Imagenes/decoration2.png" alt="">
+        </div>
+        <!--FIN DECORACION AMARILLA-->
+
+
+        <!--CREACIONES CARDS-->
+        <!--____________________________________________________________________________-->
+
+
+        <div id="creaciones" class="row">
+            <div id="creacionesT" class="offset-lg-1 col-lg-10 mb-4 mt-4">
+                <h3>NUESTROS JUEGOS</h3>
+            </div>
+
+            <div class="offset-lg-1 col-lg-3 col-sm-12 d-flex justify-content-center my-5">
+                <div class="card" style="width: 18rem; background-color: black; color: white;">
+                    <img src="./Imagenes/ashen.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Ashen</h5>
+                        <p class="card-text">Ashen es un juego souls-like que nos llevará a un oscuro mundo de fantasía
+                            medieval. Explora su realidad plagada de criaturas, enemigos y mazmorras de gran dificultad.
+                        </p>
+                        <a href="https://www.instant-gaming.com/en/3340-buy-steam-game-steam-ashen/"
+                            class="btn btn-warning">¡Me Interesa!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 d-flex justify-content-center my-5">
+                <div class="card" style="width: 18rem; background-color: black; color: white;">
+                    <img src="./Imagenes/lies-of-P.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Lies of P</h5>
+                        <p class="card-text">Este souls-like es más una referencia al gran juego de FromSoftware
+                            BloodBorne y la historia de Pinocho. Explora su pueblo consumido por la oscuridad como
+                            Pinocho</p>
+                        <a href="https://www.instant-gaming.com/en/8855-buy-steam-lies-of-p-pc-game-steam/"
+                            class="btn btn-danger">(Proximamente)</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-12 d-flex justify-content-center my-5">
+                <div class="card" style="width: 18rem; background-color: black; color: white;">
+                    <img src="./Imagenes/mortal-shell.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Mortal Shell</h5>
+                        <p class="card-text"> Un juego ambientado en un mundo de fantasía oscura que se derrumba, el
+                            título hace gala de un
+                            combate desafiante y táctico, así como presenta enemigos retorcidos y peligrosos.</p>
+                        <a href="https://www.instant-gaming.com/en/6746-buy-epic-games-game-epic-games-mortal-shell/"
+                            class="btn btn-warning">¡Me Interesa!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--primera fila-->
+        <!--____________________________________________________________________________-->
+        <!--segunda fila-->
+
+        <div id="creaciones2" class="row mb-5">
+            <div class="offset-lg-1 col-lg-3 d-flex justify-content-center my-5">
+                <div class="card" style="width: 18rem; background-color: black; color: white;">
+                    <img src="./Imagenes/nioh.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Nioh</h5>
+                        <p class="card-text">La aventura se ambienta en el Japón feudal y cuenta con la presencia de
+                            multitud de demonios y seres sobrenaturales del folclore de dicho país. Su estilo de lucha y
+                            combate será árido y difícil.</p>
+                        <a href="https://www.instant-gaming.com/en/2311-buy-game-steam-nioh-complete-edition/"
+                            class="btn btn-warning">¡Me Interesa!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 d-flex justify-content-center my-5">
+                <div class="card" style="width: 18rem; background-color: black; color: white;">
+                    <img src="./Imagenes/tails-of-iron.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Tails of Iron</h5>
+                        <p class="card-text">Un entretenido Souls-like en 2D que prescinde de otras mecánicas habituales
+                            en estos juegos, como plataformas o exploración, pero que en lo esencial cumple y además lo
+                            acompaña la gran ambientación.</p>
+                        <a href="https://www.instant-gaming.com/en/9510-buy-steam-tails-of-iron-pc-game-steam/"
+                            class="btn btn-warning">¡Me Interesa!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 d-flex justify-content-center my-5">
+                <div class="card" style="width: 18rem; background-color: black; color: white;">
+                    <img src="./Imagenes/titan-souls.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Titan Souls</h5>
+                        <p class="card-text">Como héroes solitarios armados con un simple arco y una sola flecha,
+                            recorreremos ruinas ancestrales en busca de titanes y
+                            nos enfrentaremos a las 20 bestias que nos esperan.</p>
+                        <a href="https://www.instant-gaming.com/en/1538-buy-steam-game-steam-titan-souls/"
+                            class="btn btn-warning">¡Me Interesa!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--____________________________________________________________________________-->
+        <!--FIN CREACIONES CARDS-->
+
+        <!--DECORACION AMARILLA-->
+        <div class="row mb-5">
+            <img src="./Imagenes/decoration2.png" alt="">
+        </div>
+        <!--FIN DECORACION AMARILLA-->
+
+        <!--FORMULARIO-->
+        <div class="row mb-5">
+            <div class="formulario col-lg-4">
+                <img src="./Imagenes/SIF.png" alt="">
+            </div>
+            <div class="opinion col-lg-6">
+                <h4>Danos tu Opinion</h4>
+                <div class="form-floating mb-3 mt-5">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Correo Electrónico</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Nombre</label>
+                </div>
+                <div class="row g-2 mb-3">
+                    <div class="col-md">
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelectGrid"
+                                    aria-label="Floating label select example">
+                                    <option selected>-</option>
+                                    <option value="1">Ashen</option>
+                                    <option value="2">Lies of P</option>
+                                    <option value="3">Mortal Shell</option>
+                                    <option value="4">Nioh</option>
+                                    <option value="5">Tails of Iron</option>
+                                    <option value="6">Titan Souls</option>
+                                </select>
+                                <label for="floatingSelectGrid">Mejor Juego</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <select class="form-select" id="floatingSelectGrid"
+                                aria-label="Floating label select example">
+                                <option selected>-</option>
+                                <option value="1">0 estrellas</option>
+                                <option value="2">1 estrella (*)</option>
+                                <option value="3">2 estrellas (**)</option>
+                                <option value="4">3 estrellas (***)</option>
+                                <option value="5">4 estrellas (****)</option>
+                                <option value="6">5 estrellas (*****)</option>
+                                <option value="7">6 estrellas (******)</option>
+                            </select>
+                            <label for="floatingSelectGrid">Rate de la empresa</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Opinion</label>
+                </div>
+                <!-- MODAL -->
+                <button type="button" class="offset-11 btn btn-dark mt-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Enviar
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">GRACIAS</h5>
+                            </div>
+                            <div class="modal-body">
+                                ¡GRACIAS POR TU OPINION! <p> Esperamos que lo compartas y que sigas jugando nuestros
+                                    juegos.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i
+                                        class="bi bi-x-lg"></i> Cerrar</button>
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"><i
+                                        class="bi bi-check2"></i> Ok</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FIN DEL FORMULARIO-->
+
+        <!--FOOTER-->
+        <div class="footer row bg-black">
+            <div class="col-lg-5 mt-5 mb-3">
+                <img class="ms-5" src="./Imagenes/favicon.ico" alt="">
+                <img class="ms-5" src="./Imagenes/bandai.png" alt="">
+                <img class="ms-5" src="./Imagenes/fromsoftware.png" alt="">
+            </div>
+            <div class="col-lg-3 mt-5 mb-3">
+                <h6>PAGINA HECHA POR: </h6>
+                <h6>Shadi Karbal</h6>
+            </div>
+            <div class="contactos col-lg-4 mt-2 mb-3">
+                <h5>Contacto: </h5>
+                <ul>
+                    <li>Gmail: SoulsSoftware@gmail.com - <i class="bi bi-envelope"></i></li>
+                    <li>Telefono: +34 966 624 662 - <i class="bi bi-telephone"></i></li>
+                    <li>Discord: SoulsSoftware#03410 - <i class="bi bi-discord"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--FIN DEL FOOTER-->
+
+    </div>
+    <!--FIN DEL CONTENEDOR-->
+</body>
+
+</html>

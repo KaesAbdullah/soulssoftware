@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--*********************************************************************************************************************-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--HOJA DE ESTILOS DE BOOSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--JAVASCRIPT DE BOOSTRAP-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <!--ICONOS DE BOOSTRAP-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!--TITULO DE LA PAGINA-->
+    <title> SoulsSoftware</title>
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="./Imagenes/favicon.ico" type="image/x-icon">
+    <!---------------------------------------------------------------------------------->
+    <!--HOJA DE SCRIPT-->
+    <script>
+        /*PARA QUE EL BUSCADOR FUNCIONE*/
+        function openPage() {
+            var x = document.getElementById("search").value;
+
+            if (x === "inicio") {
+                window.location.replace("./inicio.html");
+            }
+
+            if (x === "SS") {
+                window.location.replace("./inicio.html");
+            }
+
+            if (x === "SoulsSoftware") {
+                window.location.replace("./inicio.html");
+            }
+
+            if (x === "Soulssoftware") {
+                window.location.replace("./inicio.html");
+            }
+
+            if (x === "bosses") {
+                window.location.replace("./bosses.html");
+            }
+
+        }
+
+        /*HACER QUE LA IMAGEN TE MANDE AL INICIO*/
+        function imagen() {
+            var x = document.getElementById("SS").value;
+
+            window.location.replace("./inicio.html");
+        }
+
+
+        /*HACER QUE EL BOTON TE MANDE AL LOGIN*/
+        function login() {
+            var x = document.getElementById("login").value;
+
+            window.location.replace("./login.html");
+        }
+
+        /*HACER QUE EL BOTON TE MANDE AL REGISTRO*/
+        function registrarse() {
+            var x = document.getElementById("registrarse").value;
+
+            window.location.replace("./registro.html");
+        }
+    </script>
+
+    <!---------------------------------------------------------------------------------->
+    <!--HOJA DE ESTILOS PROPIA-->
+    <style>
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*GENERAL*/
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'ringm';
+            src: url(./Fuentes/Fuentes/RINGM___.TTF);
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*BACKGROUND IMAGE*/
+        body {
+            background-image: url(./Imagenes/background2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: fixed;
+        }
+
+                /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*LOADER*/
+        .loader {
+            z-index:99999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: black;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: vanish 1s 1s forwards;
+        }
+
+
+        @keyframes vanish {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+                display: none;
+            }
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*NAVBAR*/
+        #SS {
+            cursor: pointer;
+        }
+
+        #NAV {
+            border-bottom: 3px solid black;
+            z-index: 2;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*BREADCRUMB*/
+        #breadcrumb {
+            background-image: url(./Imagenes/breadcrumb.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-bottom: 1px solid white;
+            height: 6vh;
+            z-index: 1;
+        }
+
+        #linksBB a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #linksBB a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*PRESENTACION*/
+
+        .presentacion h1 {
+            font-size: 4rem;
+            font-family: "ringm", auto;
+            color: red;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*BOSSES*/
+
+        /*IZQUIERDA*/
+
+        .izquierda {
+
+            color: white;
+            background-color: rgba(255, 0, 0, 0.368);
+        }
+
+        .izquierda img {
+            width: 500px;
+            height: 300px;
+            border-left: 3px solid black;
+        }
+
+        .izquierda h4 {
+            font-size: 1.6rem;
+            padding: 10px;
+            background-color: red;
+            box-shadow: 7px 5px black;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 5px;
+        }
+
+        /*DERECHA*/
+
+        .derecha {
+
+            color: white;
+            background-color: rgba(255, 0, 0, 0.368);
+        }
+
+        .derecha img {
+            width: 500px;
+            height: 300px;
+            border-right: 3px solid black;
+        }
+
+        .derecha h4 {
+            font-size: 1.6rem;
+            padding: 10px;
+            background-color: red;
+            box-shadow: 7px 5px black;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*TABLA*/
+
+        .tabla h1 {
+            color: white;
+            padding: 10px;
+            background-color: red;
+            box-shadow: 5px 5px white;
+            border-radius: 10px;
+        }
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++*/
+        /*FOOTER*/
+
+        .footer img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .footer img+img+img {
+            width: 200px;
+            height: 20px;
+        }
+
+        .footer>div h6 {
+            color: white;
+        }
+
+        .contactos {
+            color: white;
+        }
+    </style>
+    <!---------------------------------------------------------------------------------->
+</head>
+<!--*********************************************************************************************************************-->
+
+<body>
+
+
+    <div class="loader">
+        <img src="./Imagenes/loader.gif" alt="">
+    </div>
+
+    <!--COMIENZO CONTENEDOR-->
+    <div class="contenedor">
+
+        <!--COMIENZO NAVBAR-->
+        <nav id="NAV" class="navbar navbar-expand-lg navbar-light bg-warning">
+            <div class="container-fluid">
+                <img id="SS" src="./Imagenes/SOULSSOFTWARE2.png" width="250px" onclick="imagen()" alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ms-3" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Market
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="https://www.instant-gaming.com/en/">Recommendable:
+                                        Instant Gaming</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.instant-gaming.com/en/3340-buy-steam-game-steam-ashen/">Ashen</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.instant-gaming.com/en/8855-buy-steam-lies-of-p-pc-game-steam/">Lies
+                                        of P</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.instant-gaming.com/en/6746-buy-epic-games-game-epic-games-mortal-shell/">Mortal
+                                        Shell</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.instant-gaming.com/en/2311-buy-game-steam-nioh-complete-edition/">Nioh</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.instant-gaming.com/en/9510-buy-steam-tails-of-iron-pc-game-steam/">Tails
+                                        of Iron</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.instant-gaming.com/en/1538-buy-steam-game-steam-titan-souls/">Titan
+                                        Souls</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" id="search"
+                            aria-label="Search" onchange="openPage()">
+                        <button class="btn btn-light" type="submit">Search</button>
+                    </form>
+                    <div class="dropdown">
+                        <button class="btn btn-danger dropdown-toggle mx-3" type="button" id="dropdownMenuButton2"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Language
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item active" href="#"><img style="width: 30px;"
+                                        src="./Imagenes/english.png" alt=""> English</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="../bosses.html"><img style="width:30px;" src="./Imagenes/spanish.jpg"
+                                        alt=""> Spanish</a></li>
+                        </ul>
+                    </div>
+                    <button id="login" type="button" class="btn btn-success mx-2 ms-2 my-sm-3"
+                        onclick="login()">Login</button>
+                    <button id="registrarse" type="button" class="btn btn-danger me-2"
+                        onclick="registrarse()">Register</button>
+                </div>
+            </div>
+        </nav>
+        <!--FIN NAVBAR-->
+
+        <!--COMIENZO BREADCRUMB-->
+        <nav id="breadcrumb" class="navbar navbar-dark sticky-top mb-2">
+            <div class="container-fluid">
+                <nav style="--bs-breadcrumb-divider: '||';" aria-label="breadcrumb">
+                    <ol id="linksBB" class="breadcrumb d-flex justify-content-center">
+                        <li class="breadcrumb-item mb-5"><a href="./inicio.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="./bosses.html"><i
+                                    class="bi bi-arrow-right-square-fill"></i> Bosses</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </nav>
+        <!--FIN BREADCRUMB-->
+
+        <!--PRESENTACION-->
+        <div class="presentacion row">
+            <div class="col-lg-12 mb-1 mt-5 d-flex justify-content-center">
+                <img src="./Imagenes/decoration5.png" alt="">
+            </div>
+            <div class="col-lg-12 me-1 d-flex justify-content-center">
+                <h1>HONORABLE</h1>
+            </div>
+            <div class="col-lg-12 me-5 d-flex justify-content-center">
+                <h1>BOSSES</h1>
+            </div>
+            <div class="col-lg-12 mb-5 mt-1 d-flex justify-content-center">
+                <img src="./Imagenes/decoration6.png" alt="">
+            </div>
+        </div>
+        <!--FIN PRESENTACION-->
+
+        <!--DECORACION BLANCA-->
+        <div class="row mb-2">
+            <img src="./Imagenes/decoration7.png" alt="">
+        </div>
+        <!--FIN DECORACION BLANCA-->
+
+        <!--COMIENZO DE BOSSES-->
+        <!--____________________________________________________________________________-->
+
+        <!--BOSS "SIR ALONNE"-->
+        <div class="izquierda row">
+            <div class="offset-lg-2 col-lg-4 mt-5 mb-5 d-sm-none d-md-block">
+                <img src="./Imagenes/Sir_Alonne.jpg" alt="">
+            </div>
+            <div class="col-lg-4 mt-5 mb-5">
+                <h4 class="text-warning">SIR ALONNE</h4>
+                <p>Sir Alonne is number 1 of the bosses. It is a great honor to battle against him, since the samurai
+                    himself
+                    bows before fighting to the death.</p>
+                <p>Aside from the epic battle, the music makes us feel that we are really fighting against someone
+                    honorable.
+                    Your
+                    body fills with energy just by listening to the soundtrack. All this, in addition to its sad lore.
+                </p>
+                <audio controls class="col-lg-7">
+                    <source src="./audios/sir_alonne_-6447984819131310059.mp3" type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+        <!--FIN BOSS "SIR ALONNE"-->
+        <!--BOSS "GENICHIRO ASHINA"-->
+        <div class="derecha row">
+            <div class="offset-lg-2 col-lg-4 mt-5 mb-5">
+                <h4 class="text-warning">GENICHIRO ASHINA</h4>
+                <p>Genichiro Ashina is another of the great bosses of this saga, a samurai, like Sir Alonne, with whom
+                    we fight at the beginning and this one defeats us.</p>
+                <p>This defeat tells us that we are not ready yet to fight against someone so strong and
+                    gifted like Genichiro. He is only blinded with having the power of the divine heir.</p>
+                <audio controls>
+                    <source src="./audios/sekiro_ost_genichiro_ashina_5930278125754185058.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="col-lg-4 mt-5 mb-5 d-sm-none d-md-block">
+                <img src="./Imagenes/Genichiro_Ashina.jpg" alt="">
+            </div>
+        </div>
+        <!--FIN BOSS "GENICHIRO ASHINA"-->
+
+        <!--BOSS "GWYN"-->
+        <div class="izquierda row">
+            <div class="offset-lg-2 col-lg-4 mb-5 mt-5 d-sm-none d-md-block">
+                <img src="./Imagenes/Gwyn.jpg" alt="">
+            </div>
+            <div class="col-lg-4 mt-5 mb-5">
+                <h4 class="text-warning">GWYN</h4>
+                <p>This boss, apart from being another of the honorable bosses, is a boss that haves a sad ending. Well
+                    we have to fight to the death against his body without conscience.</p>
+                <p>"The lord of cinder", as he is vaguely called. The one of himself nickname of him plus the sad
+                    soundtrack of him already
+                    tells us that he is just a
+                    soulless shell that died sacrificing itself to the flame.</p>
+                <audio controls>
+                    <source src="./audios/gwyn_lord_of_cinder_dark_souls_soundtrack_6230710737457515118.mp3"
+                        type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+        <!--FIN BOSS "GWYN"-->
+        <!--BOSS "GEHRMAN"-->
+        <div class="derecha row">
+            <div class="offset-lg-2 col-lg-4 mt-5 mb-5">
+                <h4 class="text-warning">GEHRMAN, THE FIRST HUNTER</h4>
+                <p>Known as the first hunter, he is the creator of the base of all trick weapons in the game.
+                    He is tied against his will, to the hunter's dream.</p>
+                <p>At the end of the game he will let you choose between "getting rid" of the dream, letting him kill
+                    you. But if you reject the
+                    offer, you must fight to the death against him. That is, if or if you ended up dead at his hands.
+                </p>
+                <audio controls>
+                    <source src="./audios/bloodborne_soundtrack_ost_gehrman_the_first_hunter_2660290456397060984.mp3"
+                        type="audio/mp3">
+                </audio>
+            </div>
+            <div class="col-lg-4 mt-5 mb-5 d-sm-none d-md-block">
+                <img src="./Imagenes/gherman.jpg" alt="">
+            </div>
+        </div>
+        <!--FIN BOSS "GEHRMAN"-->
+
+        <!--BOSS "ORNSTEIN"-->
+        <div class="izquierda row">
+            <div class="offset-lg-2 col-lg-4 mb-5 mt-5 d-sm-none d-md-block">
+                <img src="./Imagenes/Ornstein.jpg" alt="">
+            </div>
+            <div class="col-lg-4 mt-5 mb-5">
+                <h4 class="text-warning">ORNSTEIN</h4>
+                <p>Also known as Dragon Slayer, it is a boss with whom we will fight to get one
+                    of
+                    the best objects in the game, this allows us to travel between bonfires.</p>
+                <p>But he is not going to make it so easy for us, since he is not alone, we will fight against him and
+                    his friend Smough.
+                    If
+                    we managed to kill his friend, he will get angry and absorb his power to take revenge.</p>
+                <audio controls>
+                    <source src="./audios/ornstein_smough_dark_souls_soundtrack_7161500742431299776.mp3"
+                        type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+        <!--FIN BOSS "ORNSTEIN"-->
+        <!--BOSS "ARTORIAS"-->
+        <div class="derecha row">
+            <div class="offset-lg-2 col-lg-4 mt-5 mb-5">
+                <h4 class="text-warning">ARTORIAS</h4>
+                <p>Without a doubt, this is a great boss, it has a very sad story with a sad ending. As with
+                    Gwyn,
+                    we will fight his shell without conscience.</p>
+                <p>In his lore, he meets a gray wolf that he calls Sif, another boss
+                    we battle. Unfortunately, they had to separate due to a tragedy that occurred. Knowing
+                    this, killing his wolf makes our hearts twist.</p>
+                <audio controls>
+                    <source
+                        src="./audios/dark_souls_artorias_of_the_abyss_ost_knight_artorias_hq_5909155342907735698.mp3"
+                        type="audio/mp3">
+                </audio>
+            </div>
+            <div class="col-lg-4 mt-5 mb-5 d-sm-none d-md-block">
+                <img src="./Imagenes/Artorias.jpg" alt="">
+            </div>
+        </div>
+        <!--FIN BOSS "GENICHIRO ASHINA"-->
+
+        <!--____________________________________________________________________________-->
+        <!--FIN DE BOSSES-->
+
+        <!--DECORACION BLANCA-->
+        <div class="row mb-5 mt-2">
+            <img src="./Imagenes/decoration7.png" alt="">
+        </div>
+        <!--FIN DECORACION BLANCA-->
+
+        <!--TABLA-->
+        <div class="tabla row mx-5 mb-5">
+            <div class="col-lg-12 d-flex justify-content-center mb-3">
+                <h1>RANKING OF THE BEST 10 BOSSES</h1>
+            </div>
+            <div class="col-lg-12">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Position</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Rate</th>
+                            <th scope="col">Game</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-warning">
+                            <th scope="row">1</th>
+                            <td>Sir_Alonne</td>
+                            <td>98/100</td>
+                            <td>Dark Souls 2</td>
+                        </tr>
+                        <tr class="table-light">
+                            <th scope="row">2</th>
+                            <td>Gael</td>
+                            <td>94/100</td>
+                            <td>Dark Souls 3</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <th scope="row">3</th>
+                            <td>Artorias</td>
+                            <td>89/100</td>
+                            <td>Dark Souls</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Gehrman</td>
+                            <td>87/100</td>
+                            <td>BloodBorne</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Ornstein y Smough</td>
+                            <td>85/100</td>
+                            <td>Dark Souls</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Gwyn</td>
+                            <td>80/100</td>
+                            <td>Dark Souls</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Sif</td>
+                            <td>77/100</td>
+                            <td>Dark Souls</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Caballero del Humo</td>
+                            <td>76/100</td>
+                            <td>Dark Souls 2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Huerfano de Kos</td>
+                            <td>73/100</td>
+                            <td>BloodBorne</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>Señor de la ceniza</td>
+                            <td>70/100</td>
+                            <td>Dark Souls 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--FIN TABLA-->
+
+        <!--FOOTER-->
+        <div class="footer row bg-danger">
+            <div class="col-lg-5 mt-5 mb-3">
+                <img class="ms-5" src="./Imagenes/favicon.ico" alt="">
+                <img class="ms-5" src="./Imagenes/bandai.png" alt="">
+                <img class="ms-5" src="./Imagenes/fromsoftware.png" alt="">
+            </div>
+            <div class="col-lg-3 mt-5 mb-3">
+                <h6>PAGE MADE BY: </h6>
+                <h6>Shadi Karbal</h6>
+            </div>
+            <div class="contactos col-lg-4 mt-2 mb-3">
+                <h5>Contacto: </h5>
+                <ul>
+                    <li>Gmail: SoulsSoftware@gmail.com - <i class="bi bi-envelope"></i></li>
+                    <li>Phone: +34 833 924 912 - <i class="bi bi-telephone"></i></li>
+                    <li>Discord: SoulsSoftware#03410 - <i class="bi bi-discord"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--FIN DEL FOOTER-->
+
+    </div>
+    <!--FIN DEL CONTENEDOR-->
+
+</body>
+
+
+</html>
